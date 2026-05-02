@@ -88,54 +88,65 @@
             width: 400px;
             height: 620px;
             background: var(--white);
-            border-radius: 0;
+            border-radius: 12px; /* Added slight border radius for professional look */
             overflow: hidden;
             position: relative;
             display: none;
             box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            border: 1px solid #e2e8f0;
         }
 
         .header {
-            background-color: var(--primary-red);
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
             height: 220px;
             color: var(--white);
             text-align: center;
-            padding: 40px 20px;
+            padding: 35px 20px;
             box-sizing: border-box;
         }
 
         .header h1 { 
             margin: 0; 
-            font-size: 22px; 
-            font-weight: 400; 
-            letter-spacing: 2px;
+            font-size: 34px; /* Increased font size */
+            font-weight: 900; 
+            letter-spacing: 1px;
             text-transform: uppercase;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Professional text shadow */
         }
 
         .vehicle-num { 
-            font-size: 52px; 
-            font-weight: 900; 
-            margin-top: 15px;
+            font-size: 22px; /* Decreased font size */
+            font-weight: 700; 
+            margin-top: 20px;
             font-family: 'Inter', sans-serif;
+            background: rgba(255, 255, 255, 0.15); /* Pill design background */
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            letter-spacing: 2px;
         }
 
         /* QR Section Container */
         .qr-section {
             background: var(--white);
-            width: 250px;
-            height: 250px;
-            margin: -50px auto 0;
+            width: 240px; /* Slightly adjusted to fit nicely */
+            height: 240px;
+            margin: -40px auto 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 16px; /* Smooth corners for QR box */
             z-index: 10;
             position: relative;
+            border: 1px solid #f1f5f9;
         }
 
         #qrContainer {
-            width: 210px;
-            height: 210px;
+            width: 200px;
+            height: 200px;
         }
 
         #qrContainer img {
@@ -213,9 +224,13 @@
             font-weight: 600;
             letter-spacing: 0.5px;
         }
-        .page-footer span {
+        .page-footer a {
             color: var(--slate-900);
             font-weight: 900;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
         }
 
     </style>
@@ -318,8 +333,8 @@
                         
                         new QRCode(qrContainer, {
                             text: qrText,
-                            width: 210,
-                            height: 210,
+                            width: 200,
+                            height: 200,
                             colorDark : "#000000",
                             colorLight : "#ffffff",
                             correctLevel : QRCode.CorrectLevel.H
